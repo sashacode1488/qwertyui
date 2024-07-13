@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Написати відгук</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Написати відгук</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Головна</a></li>
+                <li><a href="rateus.html">Написати відгук</a></li>
+                <li><a href="projects.html">Наші проекти</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Ваш відгук важливий для нас</h2>
+            <form id="feedbackForm">
+                <label for="name">Ваше ім'я:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="feedback">Ваш відгук:</label><br>
+                <textarea id="feedback" name="feedback" rows="4" required></textarea><br><br>
+
+                <button type="submit">Відправити відгук</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Всі права захищені.</p>
+    </footer>
+
+    <script>
+        document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const feedback = document.getElementById('feedback').value;
+
+            const feedbackData = {
+                name: name,
+                feedback: feedback
+            };
+
+            localStorage.setItem('feedback', JSON.stringify(feedbackData));
+
+            window.location.href = 'developerpanel.html';
+        });
+    </script>
+</body>
+</html>

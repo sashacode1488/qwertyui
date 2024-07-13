@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Панель розробника</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Панель розробника</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Головна</a></li>
+                <li><a href="rateus.html">Написати відгук</a></li>
+                <li><a href="projects.html">Наші проекти</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Відгуки користувачів</h2>
+            <div id="feedbackDisplay"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Всі права захищені.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const feedbackData = JSON.parse(localStorage.getItem('feedback'));
+
+            if (feedbackData) {
+                const feedbackDisplay = document.getElementById('feedbackDisplay');
+                const feedbackElement = document.createElement('div');
+                feedbackElement.innerHTML = `<p><strong>Ім'я:</strong> ${feedbackData.name}</p>
+                                             <p><strong>Відгук:</strong> ${feedbackData.feedback}</p>`;
+                feedbackDisplay.appendChild(feedbackElement);
+            }
+        });
+    </script>
+</body>
+</html>
