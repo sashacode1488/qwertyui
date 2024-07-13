@@ -49,9 +49,14 @@
                 feedback: feedback
             };
 
+            // Зберігаємо відгук у локальне сховище
             localStorage.setItem('feedback', JSON.stringify(feedbackData));
 
-            window.location.href = 'developerpanel.html';
+            // Виводимо повідомлення про успішне збереження
+            const successMessage = document.createElement('p');
+            successMessage.textContent = 'Дякуємо за відгук нам приємно :)';
+            successMessage.style.color = 'green';
+            document.body.appendChild(successMessage);
         });
     </script>
 </body>
