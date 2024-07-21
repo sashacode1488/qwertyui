@@ -5,10 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Мій чудовий сайт</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .large-black-text {
+            font-size: 24px;
+            color: black;
+            font-weight: bold;
+        }
+        .blue-text {
+            color: blue;
+            font-weight: bold;
+        }
+        .download-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 0;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            background-color: #4CAF50;
+            border-radius: 5px;
+        }
+        .download-button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Головна</h1>
+        <h1>Наші проєкти</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Головна</a></li>
@@ -23,6 +49,10 @@
             <h2>Нажміть кнопку нижче, щоб скачати наш автоклікер</h2>
             <div style="text-align: left;">
                 <a href="autoclicker.zip" download="autoclicker.zip" class="download-button">Скачати наш Автоклікер</a>
+            </div>
+            <p class="large-black-text">Нажміть кнопку нище щоб Завантажити наш новий текстовий редактор WEBOJAR</p>
+            <div style="text-align: left;">
+                <a href="webojar.zip" download="WEBOJAR.zip" class="download-button">Завантажити наш текстовий редактор WEBOJAR</a>
             </div>
         </section>
     </main>
