@@ -34,6 +34,12 @@ nav ul li {
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff6347; /* Помаранчевий колір при наведенні */
+    border-bottom: 2px solid #ff6347; /* Підкреслення при наведенні */
 }
 
 main {
