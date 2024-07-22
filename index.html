@@ -11,8 +11,8 @@
         }
 
         window.onload = function() {
-            if (isMobileDevice() && window.location.pathname !== '/UNSUPPORTED.html') {
-                window.location.href = "UNSUPPORTED.html";
+            if (isMobileDevice() && !localStorage.getItem('bypassMobileCheck')) {
+                window.location.href = "unsupported.html";
             }
         }
     </script>
