@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unsupported Device</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .message {
+            text-align: center;
+            background: #fff;
+            padding: 2em;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .message button {
+            margin-top: 1em;
+            padding: 0.5em 1em;
+            font-size: 1em;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .message button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="message">
+        <h1>Ой!</h1>
+        <p>Цей веб сайт не піддержуєтся на телефонах! Ви впевнені що хочете до нього перейти?</p>
+        <button onclick="window.location.href='index.html'">Так</button>
+    </div>
+</body>
+</html>
