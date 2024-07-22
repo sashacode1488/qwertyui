@@ -20,32 +20,19 @@
             padding: 2em;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-        .message button {
-            margin-top: 1em;
-            padding: 0.5em 1em;
-            font-size: 1em;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-        }
-        .message button:hover {
-            background-color: #0056b3;
-        }
     </style>
+    <script>
+        // Redirect immediately
+        window.onload = function() {
+            sessionStorage.setItem('bypassMobileCheck', 'true');
+            window.location.href = 'index.html';
+        }
+    </script>
 </head>
 <body>
     <div class="message">
         <h1>Unsupported Device</h1>
         <p>Вибачте, але цей сайт не підтримується на мобільних пристроях. Будь ласка, відвідайте нас, використовуючи комп'ютер або ноутбук.</p>
-        <button onclick="bypassCheck()">Так</button>
     </div>
-
-    <script>
-        function bypassCheck() {
-            sessionStorage.setItem('bypassMobileCheck', 'true');
-            window.location.href = 'index.html';
-        }
-    </script>
 </body>
 </html>
