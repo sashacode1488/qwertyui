@@ -11,8 +11,11 @@
         }
 
         window.onload = function() {
-            if (isMobileDevice() && !sessionStorage.getItem('bypassMobileCheck')) {
-                window.location.href = "unsupported.html";
+            // Check if user has already bypassed the mobile check
+            if (!sessionStorage.getItem('bypassMobileCheck')) {
+                if (isMobileDevice()) {
+                    window.location.href = "unsupported.html";
+                }
             }
         }
     </script>
