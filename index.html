@@ -5,7 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Мій чудовий сайт</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="redirect.js" defer></script>
+    <script>
+        function isMobileDevice() {
+            return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+        }
+
+        window.onload = function() {
+            if (isMobileDevice()) {
+                window.location.href = "UNSUPPORTED.html";
+            }
+        }
+    </script>
 </head>
 <body>
     <header>
