@@ -33,12 +33,19 @@
             background-color: #0056b3;
         }
     </style>
+    <script>
+        function redirectToHome() {
+            // Temporarily disable the mobile check
+            localStorage.setItem('bypassMobileCheck', 'true');
+            window.location.href = 'index.html';
+        }
+    </script>
 </head>
 <body>
     <div class="message">
-        <h1>Ой!</h1>
-        <p>Цей веб сайт не піддержуєтся на телефонах! Ви впевнені що хочете до нього перейти?</p>
-        <button onclick="window.location.href='index.html'">Так</button>
+        <h1>Unsupported Device</h1>
+        <p>Вибачте, але цей сайт не підтримується на мобільних пристроях. Будь ласка, відвідайте нас, використовуючи комп'ютер або ноутбук.</p>
+        <button onclick="redirectToHome()">Так</button>
     </div>
 </body>
 </html>
