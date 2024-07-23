@@ -3,48 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мій чудовий сайт</title>
+    <title>Написати відгук</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .large-black-text {
-            font-size: 24px;
-            color: black;
-            font-weight: bold;
-        }
-        .blue-text {
-            color: blue;
-            font-weight: bold;
-        }
-        .download-button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 10px 0;
-            font-size: 16px;
-            font-weight: bold;
-            text-align: center;
-            text-decoration: none;
-            color: white;
-            background-color: #4CAF50;
-            border-radius: 5px;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-        }
-        .download-button:hover {
-            background-color: #45a049;
-            transform: scale(1.05); /* Slightly increase the button size */
-        }
-        .download-button:active {
-            transform: scale(1.1); /* Increase the button size more when clicked */
-        }
-    </style>
 </head>
 <body>
     <header>
-        <h1>Наші проєкти</h1>
+        <h1>Написати відгук</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Головна</a></li>
-                <li><a href="projects.html">Наші проєкти</a></li>
                 <li><a href="rateus.html">Написати відгук</a></li>
+                <li><a href="projects.html">Наші проекти</a></li>
                 <li><a href="contacts.html">Зв'язатися з нами</a></li>
             </ul>
         </nav>
@@ -52,19 +21,44 @@
 
     <main>
         <section>
-            <h2>Нажміть кнопку нижче, щоб скачати наш автоклікер</h2>
-            <div style="text-align: left;">
-                <a href="autoclicker.zip" download="autoclicker.zip" class="download-button">Скачати наш Автоклікер</a>
-            </div>
-            <p class="large-black-text">Нажміть кнопку нище щоб Завантажити наш новий текстовий редактор WEBOJAR. Нажаль через великий розмір файлу ми закинемо його на гугл диск.</p>
-            <div style="text-align: left;">
-                <a href="https://drive.google.com/file/d/1ENb8rAeR5XpqPftKvd7oRWv0vbADWJO_/view?usp=sharing" target="_blank" class="download-button">Завантажити наш текстовий редактор WEBOJAR</a>
-            </div>
+            <h2>Ваш відгук важливий для нас</h2>
+            <form id="feedbackForm">
+                <label for="name">Ваше ім'я:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="feedback">Ваш відгук:</label><br>
+                <textarea id="feedback" name="feedback" rows="4" required></textarea><br><br>
+
+                <button type="submit">Відправити відгук</button>
+            </form>
         </section>
     </main>
 
     <footer>
         <p>&copy; 2024 Всі права захищені.</p>
     </footer>
+
+    <script>
+        document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const feedback = document.getElementById('feedback').value;
+
+            const feedbackData = {
+                name: name,
+                feedback: feedback
+            };
+
+            // Зберігаємо відгук у локальне сховище
+            localStorage.setItem('feedback', JSON.stringify(feedbackData));
+
+            // Виводимо повідомлення про успішне збереження
+            const successMessage = document.createElement('p');
+            successMessage.textContent = 'Дякуємо за відгук нам приємно :)';
+            successMessage.style.color = 'green';
+            document.body.appendChild(successMessage);
+        });
+    </script>
 </body>
 </html>
