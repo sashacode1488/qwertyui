@@ -11,8 +11,8 @@
         }
 
         window.onload = function() {
-            if (isMobileDevice()) {
-                window.location.href = "UNSUPPORTED.html";
+            if (isMobileDevice() && !localStorage.getItem('bypassMobileCheck')) {
+                window.location.href = "unsupported.html";
             }
         }
     </script>
@@ -25,6 +25,7 @@
                 <li><a href="#">Головна</a></li>
                 <li><a href="projects.html">Наші проєкти</a></li>
                 <li><a href="rateus.html">Написати відгук</a></li>
+                <li><a href="contacts.html">Зв'язатися з нами</a></li>
             </ul>
         </nav>
     </header>
